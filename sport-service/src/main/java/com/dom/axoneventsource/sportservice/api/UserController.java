@@ -23,7 +23,7 @@ public class UserController {
 	}
 
 	@PostMapping("/{userId}/miles")
-	public CompletableFuture<String> addBikeMiles(@PathVariable String userId, @RequestBody MilesRequest milesRequest) {
+	public CompletableFuture<String> addMiles(@PathVariable String userId, @RequestBody MilesRequest milesRequest) {
 		return userService.addMiles(userId, milesRequest);
 	}
 
