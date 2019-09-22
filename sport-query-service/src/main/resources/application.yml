@@ -1,0 +1,32 @@
+server:
+  port: 8091
+
+
+axon:
+  kafka:
+    cliientid: sports-consumer
+    default-topic: sports.all.log
+    producer:
+      retries: 5
+      bootstrap-servers: localhost:9092
+      transaction-id-prefix: all-consumer
+    consumer:
+      group-id: sport_group
+      bootstrap-servers: localhost:9092
+  distributed:
+    enabled: true
+  serializer:
+    messages: jackson
+
+  eventhandling:
+    processors:
+      sports:
+        source: kafkaMessageSource
+        mode: TRACKING
+
+spring:
+  data:
+    mongodb:
+      database: userMiles
+      host: localhost
+      port: 27017

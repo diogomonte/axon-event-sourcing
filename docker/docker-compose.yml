@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  mongodb:
+    image: 'bitnami/mongodb:3.7'
+    ports:
+      - "27017:27017"
+  kafka:
+    image: landoop/fast-data-dev:cp3.3.0
+    ports:
+      - 2181:2181                 # Zookeeper
+      - 3030:3030                 # Landoop UI
+      - 8081-8083:8081-8083       # REST Proxy, Schema Registry, Kafka Connect ports
+      - 9581-9585:9581-9585       # JMX Ports
+      - 9092:9092                 # Kafka Broker
+    hostname: kafka
+    environment:
+      - KAFKA_ADVERTISED_HOST_NAME=kafka
+      - KAFKA_ADVERTISED_PORT=9092

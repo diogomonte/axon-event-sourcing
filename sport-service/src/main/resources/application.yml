@@ -1,0 +1,22 @@
+server:
+  port: 8090
+
+axon:
+  serializer:
+    general: jackson
+  kafka:
+    clientid: sport-producer
+    defaulttopic: sports.all.log
+    producer:
+      retries: 5
+      bootstrapservers:
+        - localhost:9092
+      transaction-id-prefix: sport
+  distributed:
+    enabled: true
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017

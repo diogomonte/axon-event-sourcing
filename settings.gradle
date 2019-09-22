@@ -1,0 +1,5 @@
+rootProject.name = 'axon-event-sourcing'
+include 'common'
+include 'sport-service'
+include 'sport-query-service'
+
