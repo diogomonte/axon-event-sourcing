@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 public class SnapshotConfig {
 
 	@Bean
-	public EventCountSnapshotTriggerDefinition accountAggregateSnapshotTriggerDefinition(SpringAggregateSnapshotter snapshotter) {
+	public EventCountSnapshotTriggerDefinition allEventsSnapshot(SpringAggregateSnapshotter snapshotter) {
 		return  new EventCountSnapshotTriggerDefinition(snapshotter, 3);
 	}
 

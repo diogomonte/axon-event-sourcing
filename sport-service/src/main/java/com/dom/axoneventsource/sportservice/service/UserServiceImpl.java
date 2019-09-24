@@ -6,6 +6,7 @@ import com.dom.axoneventsource.sportservice.api.UserRequest;
 import com.dom.axoneventsource.sportservice.command.AddMilesCommand;
 import com.dom.axoneventsource.sportservice.command.CreateUserCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
+import org.axonframework.spring.stereotype.Aggregate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

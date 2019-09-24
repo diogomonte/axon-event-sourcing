@@ -8,6 +8,7 @@ import com.dom.axoneventsourcing.common.events.MilesAddedEvent;
 import com.dom.axoneventsourcing.common.events.UserCreatedEvent;
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
+import org.axonframework.spring.stereotype.Aggregate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

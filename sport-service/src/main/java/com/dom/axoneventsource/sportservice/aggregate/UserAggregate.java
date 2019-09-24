@@ -16,7 +16,7 @@ import org.axonframework.spring.stereotype.Aggregate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Aggregate
+@Aggregate(snapshotTriggerDefinition = "allEventsSnapshot")
 @Data
 public class UserAggregate {
 
@@ -33,6 +33,11 @@ public class UserAggregate {
 
 	@CommandHandler
 	public UserAggregate(CreateUserCommand createUserCommand) {
+		AggregateLifecycle.apply(new UserCreatedEvent(createUserCommand.id, createUserCommand.userName));
+	}
+
+	@CommandHandler
+	public void on(CreateUserCommand createUserCommand) {
 		AggregateLifecycle.apply(new UserCreatedEvent(createUserCommand.id, createUserCommand.userName));
 	}
 
