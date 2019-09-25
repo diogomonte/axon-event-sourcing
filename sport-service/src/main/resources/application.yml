@@ -12,6 +12,12 @@ axon:
       bootstrapservers:
         - localhost:9092
       transaction-id-prefix: sport
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties:
+        schema:
+          registry:
+            url: "http://localhost:8081"
+
   distributed:
     enabled: true
 
